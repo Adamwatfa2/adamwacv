@@ -228,3 +228,18 @@ article:hover{
 #musicBtn:hover{
     background:#10b981;
 }
+#musicBtn{
+    position:fixed;
+    bottom:90px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#065f46;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+    z-index:9999;
+    display:block;
+}
