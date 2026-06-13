@@ -130,3 +130,21 @@ const music = document.getElementById("bgMusic");
 document.addEventListener("click", () => {
     music.play();
 }, { once: true });
+const musicBtn = document.getElementById("musicBtn");
+const bgMusic = document.getElementById("bgMusic");
+
+let playing = false;
+
+musicBtn.addEventListener("click", () => {
+
+    if(!playing){
+        bgMusic.play();
+        musicBtn.textContent = "🔇";
+        playing = true;
+    }else{
+        bgMusic.pause();
+        musicBtn.textContent = "🎵";
+        playing = false;
+    }
+
+});
