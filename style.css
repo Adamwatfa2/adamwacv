@@ -188,12 +188,15 @@ article:hover{
     header h1{
         font-size:2rem;
     }
-
 .profile-pic{
-    width:90px;
-    height:90px;
-    object-fit:cover;
-    border-radius:50%;
-    display:block;
-    margin:10px auto;
+    width:90px !important;
+    height:90px !important;
+    max-width:90px !important;
+    max-height:90px !important;
+    object-fit:cover !important;
+    border-radius:50% !important;
+    display:block !important;
+    margin:10px auto !important;
+}
+
 }
