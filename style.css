@@ -223,3 +223,18 @@ article:hover{
         font-size:2rem;
     }
 }
+.play-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 20px;
+    background:#10b981;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.play-btn:hover{
+    background:#065f46;
+    transform:scale(1.05);
+}
