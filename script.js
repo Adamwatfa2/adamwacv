@@ -133,8 +133,7 @@ function animate() {
                 ctx.lineTo(particles[b].x, particles[b].y);
                 ctx.strokeStyle = "rgba(255,255,255,0.15)";
                 ctx.stroke();
-            }
-       article{
+                      article{
     background:#f0fdf4;
     padding:15px;
     border-left:5px solid #10b981;
@@ -148,6 +147,8 @@ article:hover{
     transform:translateX(10px);
     box-shadow:0 10px 25px rgba(0,0,0,0.25);
 } }
+            }
+
     }
 
     requestAnimationFrame(animate);
