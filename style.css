@@ -5,8 +5,8 @@
 }
 
 body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #065f46, #10b981);
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#065f46,#10b981);
     color:#333;
     min-height:100vh;
 }
@@ -57,6 +57,7 @@ header{
 #typing{
     color:#a7f3d0;
     height:35px;
+    margin-bottom:10px;
 }
 
 .container{
@@ -103,6 +104,12 @@ article{
     border-left:5px solid #10b981;
     border-radius:8px;
     margin-bottom:15px;
+    transition:all 0.3s ease;
+}
+
+article:hover{
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
 
 .skill{
@@ -115,8 +122,8 @@ article{
 }
 
 .progress{
-    height:100%;
     width:0;
+    height:100%;
     background:#10b981;
     transition:2s;
 }
@@ -130,10 +137,12 @@ article{
     text-decoration:none;
     border-radius:10px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 .play-btn:hover{
     background:#065f46;
+    transform:scale(1.05);
 }
 
 .hidden{
@@ -178,22 +187,14 @@ article{
     z-index:9999;
 }
 
+#musicBtn:hover,
+#topBtn:hover{
+    background:#047857;
+}
+
 .dark-mode{
     background:#111827;
     color:white;
-}
-article{
-    background:#f0fdf4;
-    padding:15px;
-    border-left:5px solid #10b981;
-    border-radius:8px;
-    margin-bottom:15px;
-    transition:all 0.3s ease;
-}
-
-article:hover{
-    transform:translateY(-5px) scale(1.02);
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
 
 .dark-mode .container{
@@ -214,6 +215,7 @@ article:hover{
 }
 
 @media(max-width:768px){
+
     .container{
         flex-direction:column;
     }
