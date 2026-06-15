@@ -147,6 +147,7 @@ article:hover{
     transform:translateX(10px);
     box-shadow:0 10px 25px rgba(0,0,0,0.25);
 } }
+            
             }
 
     }
