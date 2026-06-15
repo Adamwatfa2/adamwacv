@@ -96,6 +96,42 @@ p{
 let score = 0;
 let musicStarted = false;
 
+setInterval(function(){
+
+    let newCheese = document.createElement("button");
+
+    newCheese.textContent = "🧀";
+
+    newCheese.style.position = "absolute";
+    newCheese.style.fontSize = "40px";
+    newCheese.style.border = "none";
+    newCheese.style.background = "white";
+    newCheese.style.borderRadius = "15px";
+    newCheese.style.cursor = "pointer";
+
+    newCheese.style.left =
+        Math.random() * (window.innerWidth - 100) + "px";
+
+    newCheese.style.top =
+        Math.random() * (window.innerHeight - 100) + "px";
+
+    newCheese.onclick = function(){
+
+        if(!musicStarted){
+            document.getElementById("music").play();
+            musicStarted = true;
+        }
+
+        score++;
+        document.getElementById("score").textContent = score;
+
+        newCheese.remove();
+    };
+
+    document.body.appendChild(newCheese);
+
+}, 500);
+
 function eatCheese(){
 
     if(!musicStarted){
@@ -111,12 +147,9 @@ function eatCheese(){
     let maxX = window.innerWidth - cheese.offsetWidth;
     let maxY = window.innerHeight - cheese.offsetHeight - 80;
 
-    let randomX = Math.random() * maxX;
-    let randomY = Math.random() * maxY + 80;
+    cheese.style.left = Math.random() * maxX + "px";
+    cheese.style.top = Math.random() * maxY + 80 + "px";
 
-    cheese.style.left = randomX + "px";
-    cheese.style.top = randomY + "px";
-    cheese.style.transform = "none";
 }
 </script>
 
