@@ -12,16 +12,18 @@ body{
     font-family:Arial, sans-serif;
     text-align:center;
     background:linear-gradient(135deg,#065f46,#10b981);
+    height:100vh;
 }
 
 h1{
     color:white;
-    margin-top:20px;
+    margin-top:15px;
+    font-size:32px;
 }
 
 p{
     color:white;
-    font-size:25px;
+    font-size:22px;
     font-weight:bold;
 }
 
@@ -31,8 +33,9 @@ p{
 
 #cheese{
     position:absolute;
-    left:200px;
-    top:200px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
     font-size:50px;
     border:none;
     background:white;
@@ -44,8 +47,8 @@ p{
 
 #backBtn{
     position:fixed;
-    bottom:20px;
-    left:20px;
+    bottom:15px;
+    left:15px;
     background:white;
     color:#065f46;
     padding:10px 15px;
@@ -53,30 +56,44 @@ p{
     text-decoration:none;
     font-weight:bold;
 }
+
+@media(max-width:768px){
+    h1{
+        font-size:26px;
+    }
+
+    p{
+        font-size:20px;
+    }
+
+    #cheese{
+        font-size:45px;
+        padding:8px;
+    }
+
+    #backBtn{
+        font-size:14px;
+        padding:8px 12px;
+    }
+}
 </style>
 
 </head>
 <body>
 
 <h1>🧀 Cheese Game</h1>
-
 <p>Score: <span id="score">0</span></p>
 
-<button id="cheese" onclick="eatCheese()">
-🧀
-</button>
+<button id="cheese" onclick="eatCheese()">🧀</button>
 
 <audio id="music" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<a href="index.html" id="backBtn">
-⬅ Back
-</a>
+<a href="index.html" id="backBtn">⬅ Back</a>
 
 <script>
 let score = 0;
-let size = 50;
 let musicStarted = false;
 
 function eatCheese(){
@@ -89,17 +106,17 @@ function eatCheese(){
     score++;
     document.getElementById("score").textContent = score;
 
-    size += 0;
-
     let cheese = document.getElementById("cheese");
 
-    cheese.style.fontSize = size + "px";
+    let maxX = window.innerWidth - cheese.offsetWidth;
+    let maxY = window.innerHeight - cheese.offsetHeight - 80;
 
-    cheese.style.left =
-    Math.random() * (window.innerWidth - 150) + "px";
+    let randomX = Math.random() * maxX;
+    let randomY = Math.random() * maxY + 80;
 
-    cheese.style.top =
-    Math.random() * (window.innerHeight - 150) + "px";
+    cheese.style.left = randomX + "px";
+    cheese.style.top = randomY + "px";
+    cheese.style.transform = "none";
 }
 </script>
 
